@@ -6,10 +6,80 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JS4</title>
+  <link media="all" rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
+  <div class="tabs">
+    <input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
+    <label for="tab-btn-1">Pythagorean theorem</label>
+    <input type="radio" name="tab-btn" id="tab-btn-2" value="">
+    <label for="tab-btn-2">Money format</label>
+    <input type="radio" name="tab-btn" id="tab-btn-3" value="">
+    <label for="tab-btn-3">Format number</label>
+    <input type="radio" name="tab-btn" id="tab-btn-4" value="">
+    <label for="tab-btn-4">Random password</label>
+    <input type="radio" name="tab-btn" id="tab-btn-5" value="">
+    <label for="tab-btn-5">Percentage</label>
+    <input type="radio" name="tab-btn" id="tab-btn-6" value="">
+    <label for="tab-btn-6">Integer/decimal part</label>
+    <input type="radio" name="tab-btn" id="tab-btn-7" value="">
+    <label for="tab-btn-7">Prime check</label>
+    <input type="radio" name="tab-btn" id="tab-btn-8" value="">
+    <label for="tab-btn-8">Armstrong number check</label>
 
+    <div id="content-1">
+      <label>a</label>
+      <input type="number" value="1" min="1" id="pythagor-a"
+        onchange="pythagorean(getValueById('pythagor-a'), getValueById('pythagor-b'))">
+      <label>b</label>
+      <input type="number" value="1" min="1" id="pythagor-b"
+        onchange="pythagorean(getValueById('pythagor-a'), getValueById('pythagor-b'))">
+      <label>c = <label id="pythagor-c">1</label></label>
+    </div>
+    <div id="content-2">
+      <label>Your sum</label>
+      <input type="text" value="1232323" id="money-format-input"
+        onchange="formatMoney(+getValueById('money-format-input'))">
+      <label>Result = <label id="money-format-result">+ 1,232,323.00</label></label>
+    </div>
+    <div id="content-3">
+      <label>Your sum</label>
+      <input type="text" value="1232323" id="money-number-input"
+        onchange="formatNumber(+getValueById('money-number-input'))">
+      <label>Result = <label id="money-number-result">1 232 323</label></label>
+    </div>
+    <div id="content-4">
+      <label>Change input for gen your password</label>
+      <input type="number" value="6" min="6" id="password-input"
+        onchange="generatePassword(+getValueById('password-input'))">
+      <label>Password: <label id="password-result"></label></label>
+    </div>
+    <div id="content-5">
+      <input type="number" value="200" min="1" id="percentage-input-number"
+        onchange="calcPercentage(+getValueById('percentage-input-number'), +getValueById('percentage-input-percent'), +getValueById('percentage-input-precision'))">
+      <input type="number" value="50" min="1" id="percentage-input-percent"
+        onchange="calcPercentage(+getValueById('percentage-input-number'), +getValueById('percentage-input-percent'), +getValueById('percentage-input-precision'))">
+      <input type="number" value="0" min="0" id="percentage-input-precision"
+        onchange="calcPercentage(+getValueById('percentage-input-number'), +getValueById('percentage-input-percent'), +getValueById('percentage-input-precision'))">
+      <label>Percentage: <label id="percentage-result">25</label></label>
+    </div>
+    <div id="content-6">
+      <input type="text" value="2" id="integer-decimal-input"
+        onchange="splitNumber(+getValueById('integer-decimal-input'))">
+      <label>Result: <label id="integer-decimal-result">{int: 2, decimal: 0.00}</label></label>
+    </div>
+    <div id="content-7">
+      <input type="number" value="4" min="1" id="prime-input" onchange="isPrime(+getValueById('prime-input'))">
+      <label>Is prime: <label id="prime-result">false</label></label>
+    </div>
+    <div id="content-8">
+      <input type="number" value="4" min="1" id="armstrong-input"
+        onchange="isArmstrong(+getValueById('armstrong-input'))">
+      <label>Is armstrong: <label id="armstrong-result">false</label></label>
+    </div>
+  </div>
+  <script src="./index.js"></script>
 </body>
 
 </html>
