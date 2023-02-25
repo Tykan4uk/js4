@@ -10,7 +10,7 @@ function pythagorean(sideA, sideB) {
 
 function formatMoney(sum) {
   const sign = sum >= 0 ? '+' : '-';
-  const formattedString = Math.abs(sum).toFixed(2).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+  const formattedString = Math.abs(sum).toFixed(2).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 
   document.getElementById('money-format-result').innerHTML = `${sign} ${formattedString}`;
 }
